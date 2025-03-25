@@ -1,7 +1,9 @@
-# Program to manipulate communicate with seeedstudion DO optical sensor
-# Needs either a USB-RS485 converter or a microcontroller programmed as passthrougth 
+# Program to manipulate seeedstudio dissolved oxygen optical sensor
+# Needs either a USB-RS485 converter or a microcontroller programmed as passthrougth
 # J Flye-Sainte-Marie 
 # 03/2025
+# 
+# 
 
 
 #!/usr/bin/env python3
@@ -20,6 +22,7 @@ class SeeedO2_sensor(minimalmodbus.Instrument):
         self.serial.parity   = serial.PARITY_NONE
         self.serial.stopbits = 1
         self.serial.timeout  = 0.1      # seconds
+        self.address = slave_address
         self.mode = minimalmodbus.MODE_RTU # rtu or ascii mode
         self.clear_buffers_before_each_transaction = True
         self.close_port_after_each_call = True
