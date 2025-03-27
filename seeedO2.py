@@ -25,7 +25,6 @@ class SeeedO2_sensor(minimalmodbus.Instrument):
         self.address = slave_address
         self.mode = minimalmodbus.MODE_RTU # rtu or ascii mode
         self.clear_buffers_before_each_transaction = True
-        self.close_port_after_each_call = True
         
     def read_raw_values(self):
         """
